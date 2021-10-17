@@ -1,0 +1,56 @@
+                                   SQL JOINS
+
+1) select ename,job,sal*12 annual_sal,emp.deptno,dname from emp,dept where  emp.deptno=dept.deptno and sal*12>30000 and job not in ('CLERK');
+
+2) select e1.ename,e1.empno,e2.ename,e2.empno from emp e1,emp e2where e1.mgr=e2.empno;
+
+3) select ename,dname from emp,dept where emp.deptno=dept.deptno;
+
+4) select dname,sum(sal) from emp,dept where emp.deptno=dept.deptno group by dname;
+
+5) select ename,dname from emp,dept where emp.deptno=dept.deptno;
+
+6) select loc,ename from emp,dept where emp.deptno=dept.deptno and comm is not null;
+
+7) select dname from emp,dept where emp.deptno=dept.deptno and sal=(select min(sal) from emp) and mgr is null;
+
+8) select dname,loc from emp,dept where emp.deptno=dept.deptno and mgr=(select empno from emp where ename=’SMITH’);
+
+9) select dname,loc from emp,dept where emp.deptno= dept.deptno and job in(‘SALESMAN’,’MANAGER’) and empno in(select mgr from emp where job=’MANAGER’);
+
+10) select ename from emp,dept where emp.deptno=dept.deptno and dname=’RESEARCH’ and job=’MANAGER’;
+
+11) select count(*) from emp where sal<(select sal from emp where empno=(select mgr from emp where ename=’BLAKE’));
+
+12) select dname,loc from emp,dept where emp.deptno=dept.deptno and job =’ANALYST’ and mgr=(select empno from emp where ename=’BLAKE’);
+
+13) select ename,hiredate,comm from emp where empno=(select mgr from emp where ename=’FORD’);
+
+14) select ename,dname from emp,dept where emp.deptno=dept.deptno and sal<(select    avg(sal) from emp where deptno=30);
+
+15) select ename,dname,loc from emp,dept where emp.deptno=dept.deptno and mgr=(select empno from emp where ename=’JONES’);
+
+16) select ename,dname from emp,dept where emp.deptno=dept.deptno and ename like ‘S%’;
+
+17) select dname from dept where deptno not in (select deptno from emp);
+
+18) select e1.ename from emp e1 ,emp e2 where e1.comm=e2.comm and e1.empno!=e2.empno;
+
+19) select dname from department;
+
+20)select ename,job,dname,loc from emp,dept where emp.deptno=dept.deptno and empno in(select mgr from emp) and loc=’CHICAGO’ ;
+
+21) select dname,hiredate from emp,dept where emp.deptno=dept.deptno and hiredate between ’01-JAN-1981’ and ’31-DEC-1982’ and sal>1800;
+
+22) select min(sal) from emp where sal>(select min(sal) from emp);
+
+23) select ename, from emp where sal*12>1500 and hiredate<’01-JAN-1982’;
+
+24) select dname,loc,deptno from dept where deptno in(select e1.deptno from emp e1,emp e2 where e1.mgr=e2.mgr and e1.empno!=e2.empno);
+
+25)  select e1.ename EMPLOYEE_NAME,e2.ename MANAGER_NAME from emp e1,emp e2 where e1.mgr=e2.empno;
+
+26) select ename,dname from emp,dept where emp.deptno=dept.deptno and ename like ‘S%’;
+
+27) select e1.ename from emp e1,emp e2 where e1.sal=e2.sal and e1.empno!=e2.empno;
+

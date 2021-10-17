@@ -1,0 +1,61 @@
+                               SQL OPERATORS
+
+1) select * from employee where comm is null;
+
+2) select * from employee where manager is null;
+
+3) select * from employee where deptno=30;
+
+4) select * from employee where deptno=30 and salary > 1500;
+
+5) select * from employee where name like 'S%' or name like 'A%';
+
+6) select * from employee where deptno not in (10,20);
+
+7) select * from employee where ename not like 'S%';
+
+8) select * from employee where deptno=10 and manager is not null;
+
+9) select * from employee where comm is not null and job='CLERK';
+
+10) select * from employee where deptno in (10,30) and manager is null;
+
+11) select * from employee where deptno=30 and job='SALESMAN' and salary > 2450;
+
+12)  select * from employee where deptno=20 and job='ANALYST' and salary > 2500;
+
+13) select * from employee where ename like 'M%' or ename like 'J%';
+
+14) select employee.*,salary*12 as 'annual_salary' from employee where deptno<>30;
+
+15) select * from employee where ename not like '%ES' OR ename not like '%R';
+
+16) select employee.*,(salary*10)/100 as hike from employee where deptno=10 and manager is not null;
+
+17) select * from employee where job='SALESMAN' and salary like '----' and ename like '%E';
+
+18) select * from employee where hiredate > '31-12-1981';
+
+19) select * from employee where hiredate like '%-02-%';
+
+20) select * from employee where job not in ('MANAGER','CLERK') and deptno in (10,20) and salary between 1000 and 2000;
+
+21) select * from employee where salary not between 1000 and 2000 and deptno in(10,20,30) and job<>'SALESMAN';
+
+22) select dname,location from department where location like '%o%' or dname like '%o%';
+
+23)  select * from employee where instr(job,'MAN');
+
+24)  select * from employee where hiredate between '1982-12-31' and '1987-01-01';
+
+25) select * from employee where hiredate like '%-11-%' or hiredate like '%-12-%';
+
+26) select ename,comm from employee where  comm > salary;
+
+27) select ename,job from employee where manager is not null and ename like 'S%';
+
+28) select ename,salary from employee where salary*12 like '%0';
+
+29) select * from employee where ename like '%L%L%' OR ename like '%LL%';
+
+30) select ename from employee where ename like 'A%' or ename like 'E%' or ename like 'I%' or ename like 'O%' or ename like 'U%';
